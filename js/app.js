@@ -53,7 +53,7 @@ function handleSearchSubmit(event) {
                 $('#gif-gallery').append( `
                 <div class="gif-item">
                 <img src=" ${response.data[i].images.downsized.url}" alt="TAGS" />
-                <p>Source:</p>
+                <p>source:</p>
                 <textarea>${response.data[i].images.downsized.url}</textarea>
                 </div>
                 `);
