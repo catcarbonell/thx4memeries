@@ -49,7 +49,7 @@ function handleSearchSubmit(event) {
         success: function (response){ 
             $('#clear-search').show();
             for(i in response.data){
-                $(".gif-item").slice(0, 4).fadeIn().show();
+                //$(".gif-item").slice(0, 4).fadeIn().show();
                 $('#gif-gallery').append( `
                 <div class="gif-item">
                 <img src=" ${response.data[i].images.downsized.url}" alt="TAGS" />
