@@ -1,5 +1,17 @@
 $(document).ready(function(){
 console.log('oh heck.');
+// GIPHY API URL 
+// https://api.giphy.com/v1/gifs/search?api_key=P3e3lyyGy6pyTA8JjmwmitoJ0YCQe2PF&q=cats&limit=25&offset=0&rating=G&lang=en
+
+// GIF-ITEM TEMPLATE
+let gifTemplate = `
+<div class="gif-item">
+<img src="URL" alt="TAGS" />
+<br />
+<textarea>URL SRC</textarea>
+</div>
+`
+
 /* 
 -- FRONT-END NOTES --
 x //   extra idea: generate random value quote for the main search
@@ -28,6 +40,6 @@ let randoQuoteGen = () => {
 }
 $('input[type=text]#main-input').val("🔍 " + randoQuoteGen());
 
-/* */ 
+/* AJAXin */ 
 
 }); // end of doc ready

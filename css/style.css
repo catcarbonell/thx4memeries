@@ -12,7 +12,7 @@ html {
 
 body {
    /* background-color: lightpink;*/
-   margin: 0 auto;
+    margin: 0 auto;
     display: flex;
     flex-flow: column wrap;
     justify-content: center;
@@ -23,7 +23,6 @@ body {
 /* BEFORE/ON-LOAD */
 
 main { 
-    /*min-width: 320px;*/
     width: 100%;
     margin: 10px auto;
     display: flex;
@@ -36,7 +35,6 @@ form#main-search {
     margin: 25px auto;
     padding: 5px;
     width: 100%;
-    min-width: 350px;
     border: solid 2px crimson;
     z-index: 1;
     position: fixed;
@@ -46,7 +44,6 @@ form#main-search {
 
 #main-search input {
     border: solid 3px lightcoral;
-    min-width: 320px;
     width: 75%;
     padding: 10px 0;
     border-radius: 20px;
@@ -74,10 +71,10 @@ form#main-search {
 
 /* GALLERY */
 #gif-gallery {
-    width: 90%;
+    width: 95%;
     margin: 100px auto;
-    padding: 0;
     border: 3px solid crimson;
+    padding: 20px;
 }
 
 /* INDIVIDUAL GALLERY ITEMS */
@@ -87,7 +84,7 @@ div.gif-item {
     position: relative;
     vertical-align: top;
     padding: 10px;
-    width: 250px;
+    max-width: 200px;
     height: auto;
     margin: 10px 5px;
     border: 3px solid lightpink;
@@ -111,3 +108,31 @@ div.gif-item {
 
 /* MEDIA QUERIES */
 /* Once viewport reaches 350px, switch to flexbox.*/
+
+@media only screen and (max-width: 450px)  {
+
+    #main-input input{
+        width: 100px;
+    }
+
+    #main-input-submit {
+        width: 50px;
+    }
+
+    #gif-gallery {
+        width: 75%;
+        margin: 50px auto;
+        border: 3px solid crimson;
+        display: flex;
+        flex-flow: column wrap;
+        padding: 0;
+
+    }
+
+    .gif-item {
+        min-width: 95%;
+        margin: 0 auto;
+        padding: 0;
+    }
+
+}
