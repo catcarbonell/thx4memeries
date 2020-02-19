@@ -1,3 +1,4 @@
+$(document).ready(function(){
 console.log('oh heck.');
 /* 
 -- FRONT-END NOTES --
@@ -19,6 +20,7 @@ const randoQuoteLib = [
     "One more time~ Search for the memeries",
     "A/S/L?"
 ];
+
 let randoQuoteGen = () => {
     const randoMath = Math.random();
     let i = randoQuoteLib.length;
@@ -26,4 +28,6 @@ let randoQuoteGen = () => {
 }
 $('input[type=text]#main-input').val("🔍 " + randoQuoteGen());
 
-/* */
+/* */ 
+
+}); // end of doc ready
