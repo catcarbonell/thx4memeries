@@ -52,7 +52,7 @@ $(document).ready(function(){
                 $('div').append(`<h2>Whoops. What happened??</h2>`);
             },
         });
-        gifSearchInput.value= randoQuoteGen();
+        gifSearchInput.value= "🔍 " + randoQuoteGen();
     }
 
     // *** EVENT LISTENERS *** //
