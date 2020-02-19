@@ -42,7 +42,7 @@ form#main-search {
 }
 
 #main-search input {
-    border: solid 3px lightcoral;
+    border: solid 3px #333;
     background: rgba( 255, 255,255, 0.7);
     width: 75%;
     padding: 10px 0;
@@ -67,7 +67,7 @@ form#main-search {
     border-radius: 10px;
     font-size: 1em;
     border: 0;
-    background-color: coral;
+    background-color: #333;
     opacity: 0.8;
     color: floralwhite;
 }

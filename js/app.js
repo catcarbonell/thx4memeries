@@ -1,16 +1,7 @@
 $(document).ready(function(){
 console.log('oh heck.');
 // GIPHY API URL 
-// https://api.giphy.com/v1/gifs/search?api_key=P3e3lyyGy6pyTA8JjmwmitoJ0YCQe2PF&q=cats&limit=25&offset=0&rating=G&lang=en
-
-// GIF-ITEM TEMPLATE
-let gifTemplate = `
-<div class="gif-item">
-<img src="URL" alt="TAGS" />
-<p>Source</p>
-<textarea>URL SRC</textarea>
-</div>
-`
+const giphyURL = ' https://api.giphy.com/v1/gifs/search?api_key=P3e3lyyGy6pyTA8JjmwmitoJ0YCQe2PF&q=';
 
 /* 
 -- FRONT-END NOTES --
@@ -41,5 +32,63 @@ let randoQuoteGen = () => {
 $('input[type=text]#main-input').val("🔍 " + randoQuoteGen());
 
 /* AJAXin */ 
+
+
+const form = document.querySelector('form');
+
+// *** FUNCTIONS *** //
+function handleSearchSubmit(event) {
+    event.preventDefault();
+    const gifSearchInput = document.querySelector('#main-input');
+    document.querySelector('#gif-gallery').innerHTML = '';
+   
+    $.ajax(
+        {
+        method: 'GET',
+        url: giphyURL + gifSearchInput.value + "&offset=0&rating=G&lang=en",
+        success: function (response){ 
+            $('#clear-search').show();
+            for(i in response.data){
+                $(".gif-item").slice(0, 4).fadeIn().show();
+                $('#gif-gallery').append( `
+                <div class="gif-item">
+                <img src=" ${response.data[i].images.downsized.url}" alt="TAGS" />
+                <p>Source:</p>
+                <textarea>${response.data[i].images.downsized.url}</textarea>
+                </div>
+                `);
+            }
+          /*  $("#loadMore").show().on("click", function(e){
+                e.preventDefault();
+                $(".content:hidden").slice(0, 4).fadeIn();
+                if($(".content:hidden").length <= 0){
+                    $("#loadMore").hide();
+                    $("#top-link").show();
+                }
+            });*/
+        },
+        error: function(error){
+            console.log(error);
+            console.log('oh no.')
+            $('div').append(`<h2>Whoops. What happened??</h2>`);
+        },
+    });
+    // Search reset!
+     gifSearchInput.value='';
+     $("#top-link").hide();
+}
+
+// *** EVENT LISTENERS *** //
+form.addEventListener('submit', handleSearchSubmit); 
+
+$('#clear-search').on('click', function(e){
+    e.preventDefault();
+    $('.gif-gallery').html('<section id="gif-gallery"></section>');
+    $("#top-link").hide();
+    $("#loadMore").hide();
+    $("#clear-search").hide();
+})
+
+
 
 }); // end of doc ready
