@@ -7,7 +7,7 @@ console.log('oh heck.');
 let gifTemplate = `
 <div class="gif-item">
 <img src="URL" alt="TAGS" />
-<br />
+<p>Source</p>
 <textarea>URL SRC</textarea>
 </div>
 `
