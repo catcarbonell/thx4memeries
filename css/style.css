@@ -1,0 +1,69 @@
+/* THX 4 THE MEMERIES - STYLESHEET  */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    font-family: 'Anonymous Pro', 'Courier New', Courier, monospace;
+}
+
+/* BEFORE/ON-LOAD */
+
+main { 
+    /*min-width: 320px;*/
+    width: 75%;
+    display: flex;
+    justify-content: center;
+    border: solid 2px crimson;
+    align-items: center;
+}
+
+#main-search {
+    width: 90%;
+    border: solid 2px crimson;
+    z-index: 9;
+    position: relative;
+}
+
+#main-search input {
+    border: solid 3px lightcoral;
+    /*min-width: 320px;*/
+    width: 90%;
+    padding: 10px;
+    border-radius: 20px;
+
+    font-size: 12px;
+    letter-spacing: 2px;
+}
+
+#main-search input[value]{
+    font-family: 'Anonymous Pro', 'Courier New', Courier, monospace;
+    text-align: center;
+}
+
+#main-input-submit {
+    margin: 0;
+    padding: 7px;
+    border-radius: 10px;
+    font-size: 1em;
+    border: 0;
+    background-color: coral;
+    color: floralwhite;
+}
+
+.gif-item {
+    justify-content: space-between;
+}
+
+
+
