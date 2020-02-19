@@ -23,16 +23,12 @@ $(document).ready(function(){
     }
     $('input[type=text]#main-input').val("🔍 " + randoQuoteGen());
 
-/* AJAXin */ 
-
-
+    /* AJAXin */ 
     const form = document.querySelector('form');
-
     function handleSearchSubmit(event) {
         event.preventDefault();
         const gifSearchInput = document.querySelector('#main-input');
         document.querySelector('#gif-gallery').innerHTML = '';
-    
         $.ajax(
             {
             method: 'GET',
@@ -56,22 +52,10 @@ $(document).ready(function(){
                 $('div').append(`<h2>Whoops. What happened??</h2>`);
             },
         });
-        // Search reset!
-        gifSearchInput.value='';
-        $("#top-link").hide();
+        gifSearchInput.value= randoQuoteGen();
     }
 
     // *** EVENT LISTENERS *** //
     form.addEventListener('submit', handleSearchSubmit); 
-
-    $('#clear-search').on('click', function(e){
-        e.preventDefault();
-        $('.gif-gallery').html('<section id="gif-gallery"></section>');
-        $("#top-link").hide();
-        $("#loadMore").hide();
-        $("#clear-search").hide();
-})
-
-
 
 }); // end of doc ready
