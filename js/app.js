@@ -15,7 +15,6 @@ $(document).ready(function(){
         "Hey.",
         "One more time~ Search for the memeries",
     ];
-
     let randoQuoteGen = () => {
         const randoMath = Math.random();
         let i = randoQuoteLib.length;
@@ -54,8 +53,6 @@ $(document).ready(function(){
         });
         gifSearchInput.value= "🔍 " + randoQuoteGen();
     }
-
     // *** EVENT LISTENERS *** //
     form.addEventListener('submit', handleSearchSubmit); 
-
 }); // end of doc ready
