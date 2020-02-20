@@ -1,7 +1,7 @@
 $(document).ready(function(){
     console.log('oh heck.');
     // GIPHY API URL 
-    const giphyURL = ' https://api.giphy.com/v1/gifs/search?api_key=P3e3lyyGy6pyTA8JjmwmitoJ0YCQe2PF&q=';
+    const giphyURL = 'https://api.giphy.com/v1/gifs/search?api_key=P3e3lyyGy6pyTA8JjmwmitoJ0YCQe2PF&q=';
 
     /* RANDOQUOTE INPUT */
     const randoQuoteLib = [
