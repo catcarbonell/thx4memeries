@@ -1,5 +1,6 @@
 $(document).ready(function(){
     console.log('oh heck.');
+
     // GIPHY API URL 
     const giphyURL = 'https://api.giphy.com/v1/gifs/search?api_key=P3e3lyyGy6pyTA8JjmwmitoJ0YCQe2PF&q=';
 
@@ -33,12 +34,10 @@ $(document).ready(function(){
             method: 'GET',
             url: giphyURL + gifSearchInput.value + "&offset=0&rating=G&lang=en",
             success: function (response){ 
-                $('#clear-search').show();
                 for(i in response.data){
-                    //$(".gif-item").slice(0, 4).fadeIn().show();
                     $('#gif-gallery').append( `
                         <div class="gif-item">
-                            <img src=" ${response.data[i].images.downsized.url}" alt="TAGS" />
+                            <img src="${response.data[i].images.downsized.url}" alt="animated image" />
                             <p>source:</p>
                             <div class="copypasta">${response.data[i].images.downsized.url}</div>
                         </div>
@@ -57,8 +56,8 @@ $(document).ready(function(){
     /* EVENT LISTENERS */
     form.addEventListener('submit', handleSearchSubmit);
 
-    /* ONE-TAP COPY-PASTA  */
 
+    /* ONE-TAP COPY-PASTA  */
     const copyText = document.querySelector(".copypasta");
     if(copyText) {
         copyText.addEventListener('click', function(event){
