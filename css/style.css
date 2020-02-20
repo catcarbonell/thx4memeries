@@ -79,11 +79,13 @@ form#main-search {
     letter-spacing: 2px;
     justify-content: center;
     margin: 0 auto;
+    user-select: all;
 }
 
 #main-search input[value]{
     font-family: 'Anonymous Pro', 'Courier New', Courier, monospace;
     text-align: center;
+    user-select: all;
 }
 
 #main-input-submit {
@@ -91,7 +93,7 @@ form#main-search {
     font-weight: 900;
     width: 100px;
     margin: 0 auto;
-    padding: 7px;
+    padding: 3px;
     border-radius: 10px;
     font-size: 1em;
     border: 0;
@@ -134,19 +136,25 @@ div.gif-item {
     border-radius: 5px;
 }
 
-.gif-item textarea{
-    width: 100%;
+.copypasta{
+    max-width: 200px;
+    height: 50px;
+    overflow-x: scroll;
     padding: 10px 5px;
-    margin-top: 5px;
+    margin: 5px auto;
     font-family: 'Anonymous Pro', 'Courier New', Courier, monospace;
+    font-size: 12px;
     border: 2px dotted #ddd;
+    user-select: all;
+    -webkit-user-select: all;  
+    -moz-user-select: all;
+    -ms-user-select: all;
 }
 
 .gif-item img {
     width: 100%;
     border: 1px solid #333;
 }
-
 
 /* MEDIA QUERIES */
 /* Once viewport reaches 350px, switch to flexbox.*/

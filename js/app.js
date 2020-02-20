@@ -37,11 +37,11 @@ $(document).ready(function(){
                 for(i in response.data){
                     //$(".gif-item").slice(0, 4).fadeIn().show();
                     $('#gif-gallery').append( `
-                    <div class="gif-item">
-                    <img src=" ${response.data[i].images.downsized.url}" alt="TAGS" />
-                    <p>source:</p>
-                    <textarea>${response.data[i].images.downsized.url}</textarea>
-                    </div>
+                        <div class="gif-item">
+                            <img src=" ${response.data[i].images.downsized.url}" alt="TAGS" />
+                            <p>source:</p>
+                            <div class="copypasta">${response.data[i].images.downsized.url}</div>
+                        </div>
                     `);
                 }
             },
@@ -53,6 +53,25 @@ $(document).ready(function(){
         });
         gifSearchInput.value= "🔍 " + randoQuoteGen();
     }
-    // *** EVENT LISTENERS *** //
-    form.addEventListener('submit', handleSearchSubmit); 
+
+    /* EVENT LISTENERS */
+    form.addEventListener('submit', handleSearchSubmit);
+
+    /* ONE-TAP COPY-PASTA  */
+
+    const copyText = document.querySelector(".copypasta");
+    if(copyText) {
+        copyText.addEventListener('click', function(event){
+            event.preventDefault();
+            event.stopImmediatePropagation();
+            copyText.select();
+            copyText.setSelectionRange(0, 99999); /*For mobile devices*/
+        
+            /* Copy the text inside the text field */
+            document.execCommand("copy");
+        
+            /* Alert the copied text */
+            alert("Copied the text: " + copyText.value);
+       })
+    }
 }); // end of doc ready
