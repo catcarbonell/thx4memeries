@@ -26,9 +26,9 @@ footer {
 }
 
 footer a:link, a:visited {
-    color:#E7A9B1;
+    color: #a291b1;
     text-decoration: none;
-    font-weight: 900;
+    font-weight: 999;
 }
 
 footer a:hover {
@@ -41,6 +41,10 @@ footer span {
     font-size: 12px;
     color:#E7A9B1;
     font-weight: 900;
+}
+footer span:hover {
+    color: #a291b1;
+    cursor: default;
 }
 
 /* BEFORE/ON-LOAD */
