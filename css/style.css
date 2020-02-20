@@ -78,7 +78,7 @@ form#main-search {
     font-size: 12px;
     letter-spacing: 2px;
     justify-content: center;
-    margin: 0 auto;
+    margin: 0 auto; 
     user-select: all;
 }
 
