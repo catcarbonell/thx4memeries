@@ -26,7 +26,25 @@ body {
     flex-flow: column wrap;
     justify-content: center;
     font-family: 'Anonymous Pro', 'Courier New', Courier, monospace;
+}
 
+button {
+    font-family: 'Anonymous Pro', 'Courier New', Courier, monospace;
+    font-weight: 900;
+    width: 75px;
+    margin: 0 5px;
+    padding: 5px;
+    border-radius: 10px;
+    font-size: 1em;
+    border: 0;
+    background-color: #333;
+    opacity: 0.8;
+    color: #fff;
+}
+
+button:hover {
+    transition: ease-in 0.5s;
+    background-color:  #a291b1;
 }
 
 footer {
@@ -42,52 +60,35 @@ footer a:link, a:visited {
 }
 
 footer a:hover {
-    text-decoration: underline;
     cursor: crosshair;
+    transition: ease-in 0.3s;
+    color: #333;
 }
 
-footer span {
-    font-family: Helvetica, sans-serif;
-    font-size: 12px;
-    color:#E7A9B1;
-    font-weight: 900;
-}
-footer span:hover {
-    color: #a291b1;
-    cursor: default;
-}
 
-/* BEFORE/ON-LOAD */
+/* SEARCH BAR */
 
-main { 
+#main-search {
     width: 100%;
-    margin: 10px auto;
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    align-items: center;
+    padding: 10px 5px;
+    background: rgba( 255, 255,255, 0.7);
 }
 
 form#main-search {
-    margin: 3% auto 0 auto;
-    padding: 5px;
-    width: 100%;
     z-index: 1;
     position: fixed;
-    background: rgba( 255, 255,255, 0.7);
-    display: inline-flex;
+    display: flex;
 }
 
-#main-search input {
+ #main-search input{
     border: solid 3px #333;
     background: rgba( 255, 255,255, 0.7);
-    width: 75%;
-    padding: 10px 0;
+    width: 95%;
+    margin: 0 auto;
+    padding: 10px;
     border-radius: 20px;
     font-size: 12px;
     letter-spacing: 2px;
-    justify-content: center;
-    margin: 0 auto; 
     user-select: all;
 }
 
@@ -97,18 +98,10 @@ form#main-search {
     user-select: all;
 }
 
-#main-input-submit {
-    font-family: 'Anonymous Pro', 'Courier New', Courier, monospace;
-    font-weight: 900;
-    width: 100px;
-    margin: 0 auto;
-    padding: 3px;
-    border-radius: 10px;
-    font-size: 1em;
-    border: 0;
-    background-color: #333;
-    opacity: 0.8;
-    color: floralwhite;
+
+#clear-btn {
+   display: none;
+   padding: 5px;
 }
 
 #main-input-submit:hover {
@@ -172,14 +165,11 @@ div.gif-item {
 /* MEDIA QUERIES */
 /* Once viewport reaches 350px, switch to flexbox.*/
 
-@media only screen and (max-width: 450px)  {
-
-    #main-input input{
-        width: 100px;
-    }
+@media only screen and (max-width: 500px)  {
 
     #main-input-submit {
         width: 50px;
+        padding: 10px;
     }
 
     #gif-gallery {
