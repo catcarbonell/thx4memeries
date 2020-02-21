@@ -4,24 +4,26 @@ $(document).ready(function(){
 
     // GIPHY API URL 
     const giphyURL = 'https://api.giphy.com/v1/gifs/search?api_key=P3e3lyyGy6pyTA8JjmwmitoJ0YCQe2PF&q=';
- /* RANDOQUOTE INPUT */
- const randoQuoteLib = [
-    "One more time~ Search for the memeries",
-    "Going my way?",
-    "Hello. Is it me you're looking for?",
-    "Khajit has wares if u have coin.",
-    "One more time~ Search for the memeries",
-    "A/S/L?",
-    "=^.^=",
-    "Hey.",
-    "One more time~ Search for the memeries",
-];
-let randoQuoteGen = () => {
-    const randoMath = Math.random();
-    let i = randoQuoteLib.length;
-    return randoQuoteLib[Math.floor(i * randoMath)];
-}
-$('input[type=text]#main-input').val("🔍 " + randoQuoteGen());
+    
+    /* RANDOQUOTE INPUT */
+    const randoQuoteLib = [
+        "One more time~ Search for the memeries",
+        "Going my way?",
+        "Hello. Is it me you're looking for?",
+        "Khajit has wares if u have coin.",
+        "One more time~ Search for the memeries",
+        "A/S/L?",
+        "=^.^=",
+        "Hey.",
+        "One more time~ Search for the memeries",
+    ];
+    let randoQuoteGen = () => {
+        const randoMath = Math.random();
+        let i = randoQuoteLib.length;
+        return randoQuoteLib[Math.floor(i * randoMath)];
+    }
+    $('input[type=text]#main-input').val("🔍 " + randoQuoteGen());
+
     /* AJAXin */ 
     const form = document.querySelector('form');
     function handleSearchSubmit(event) {
@@ -64,8 +66,6 @@ $('input[type=text]#main-input').val("🔍 " + randoQuoteGen());
         document.querySelector('#gif-gallery').innerHTML = '';
     });
 
-   
-
     /* ONE-TAP COPY-PASTA  */
     const copyText = document.querySelector(".copypasta");
     if(copyText) {
@@ -82,4 +82,4 @@ $('input[type=text]#main-input').val("🔍 " + randoQuoteGen());
             alert("Copied the text: " + copyText.value);
        });
     };
-}); // end of doc ready
+}); 
